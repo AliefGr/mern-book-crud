@@ -5,7 +5,11 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import routeBook from "./route/routeBook.js";
 import connectDB from "./app/db.js";
 
-
+const corsConfig = {
+    origin: "http://localhost:3000",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+}
 
 dotenv.config();
 const port = process.env.PORT;
@@ -13,6 +17,7 @@ const port = process.env.PORT;
 connectDB();
 const app = express();
 
+app.use(cors(corsConfig));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
