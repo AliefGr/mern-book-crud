@@ -8,10 +8,9 @@
     ],
     "routes": [
       {
-        "src": "/.*",
+        "src": "/(.*)",
         "dest": "server.js"
       }
-    ],
-    "buildCommand": "expo export -p web && sed -i 's/\"type\": \"module\"/\"type\": \"commonjs\"/' package.json"
+    ]
   }
   
