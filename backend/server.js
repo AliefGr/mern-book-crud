@@ -1,5 +1,6 @@
 import express from "express";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import routeBook from "./route/routeBook.js";
 import connectDB from "./app/db.js";
