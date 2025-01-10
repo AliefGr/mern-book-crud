@@ -1,8 +1,11 @@
 import express from "express";
+import cors from "cors";
 import dotenv from "dotenv";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import routeBook from "./route/routeBook.js";
 import connectDB from "./app/db.js";
+
+
 
 dotenv.config();
 const port = process.env.PORT;
@@ -10,6 +13,7 @@ const port = process.env.PORT;
 connectDB();
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // console.log("Loaded PORT:", process.env.PORT); // Tambahkan ini untuk debug
