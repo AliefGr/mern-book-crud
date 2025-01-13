@@ -9,7 +9,7 @@ export default defineConfig({
     proxy : {
       '/api' : {
         // target : 'http://localhost:8000',
-        target : 'https://mern-book-be.vercel.app/',
+        target : 'https://mern-book-be.vercel.app',
         changeOrigin : true,
       }
     }
